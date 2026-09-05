@@ -14,8 +14,14 @@ code.
 
 ## Status
 
-Early scaffold: project shell, i18n, and local persistence are working.
-Character creation, sheet, and play mode are in progress.
+Functional end to end: a 7-step character creation wizard (species,
+class, background, ability scores, skills, details, review), a
+character sheet (screen + print), and a play mode (HP, spell slots,
+rest, XP/leveling). SRD content currently covers all 12 classes (SRD
+5.1's 9 races + 4 subraces, the single background and feat the SRD
+publishes, full weapon/armor/equipment tables, and cantrips + spells
+of levels 1–3). Class features are recorded up to level 20; spells of
+level 4+ and additional subclasses are the natural next expansion.
 
 ## Development
 
@@ -52,8 +58,16 @@ i dettagli di licenza, e [LICENSE](LICENSE) per la licenza MIT del codice.
 
 ## Stato
 
-Scaffold iniziale: struttura del progetto, i18n e persistenza locale
-funzionano. Creazione personaggio, scheda e modalità gioco sono in corso.
+Funzionante da cima a fondo: un wizard di creazione personaggio in 7
+passi (specie, classe, background, caratteristiche, abilità,
+dettagli, riepilogo), una scheda personaggio (schermo + stampa) e una
+modalità Gioca (PF, slot incantesimo, riposo, PX/livello). I contenuti
+SRD coprono al momento tutte le 12 classi (le 9 razze + 4 sottorazze
+della SRD 5.1, l'unico background e talento pubblicati dalla SRD, le
+tabelle complete di armi/armature/equipaggiamento, e trucchetti +
+incantesimi di livello 1-3). I tratti di classe sono registrati fino
+al livello 20; incantesimi di livello 4+ e sottoclassi aggiuntive sono
+la naturale espansione successiva.
 
 ## Sviluppo
 
