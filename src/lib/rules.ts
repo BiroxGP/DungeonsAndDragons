@@ -85,3 +85,8 @@ export function hitPointsForLevel(hitDie: number, level: number, conModifier: nu
 export function abilityScoreForKey(abilities: CharacterAbilities, key: AbilityKey): number {
   return abilities[key]
 }
+
+/** SRD 5.1: carrying capacity in pounds is Strength score x 15. */
+export function carryingCapacity(strengthScore: number): number {
+  return strengthScore * 15
+}

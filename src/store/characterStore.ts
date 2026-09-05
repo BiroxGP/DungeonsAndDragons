@@ -6,6 +6,8 @@ interface CharacterStore {
   characters: Character[]
   activeCharacterId: string | null
   addCharacter: (name?: string) => Character
+  /** Upserts a fully-formed character (e.g. from the creation wizard or a JSON import). */
+  saveCharacter: (character: Character) => void
   updateCharacter: (id: string, patch: Partial<Character>) => void
   removeCharacter: (id: string) => void
   setActiveCharacterId: (id: string | null) => void
@@ -23,6 +25,16 @@ export const useCharacterStore = create<CharacterStore>()(
         const character = createCharacter(name)
         set((state) => ({ characters: [...state.characters, character], activeCharacterId: character.id }))
         return character
+      },
+
+      saveCharacter: (character) => {
+        set((state) => {
+          const exists = state.characters.some((c) => c.id === character.id)
+          const characters = exists
+            ? state.characters.map((c) => (c.id === character.id ? character : c))
+            : [...state.characters, character]
+          return { characters, activeCharacterId: character.id }
+        })
       },
 
       updateCharacter: (id, patch) => {

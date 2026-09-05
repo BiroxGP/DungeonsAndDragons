@@ -11,10 +11,120 @@
   },
   "home": {
     "noCharacters": "Non hai ancora nessun personaggio.",
-    "newCharacter": "Nuovo personaggio"
+    "newCharacter": "Nuovo personaggio",
+    "open": "Apri",
+    "delete": "Elimina"
   },
   "footer": {
     "notice": "Realizzato con il System Reference Document 5.1 di D&D, distribuito con licenza Creative Commons Attribution 4.0 International.",
     "about": "Info e licenza"
+  },
+  "common": {
+    "back": "Indietro",
+    "next": "Avanti",
+    "finish": "Termina",
+    "cancel": "Annulla",
+    "none": "Nessuna",
+    "level": "Livello"
+  },
+  "wizard": {
+    "steps": {
+      "race": "Specie",
+      "class": "Classe",
+      "background": "Background",
+      "abilities": "Caratteristiche",
+      "skills": "Abilità",
+      "details": "Dettagli",
+      "review": "Riepilogo"
+    },
+    "race": {
+      "title": "Scegli una specie",
+      "subrace": "Sottorazza",
+      "abilityBonuses": "Aumenti di caratteristica",
+      "speed": "Velocità",
+      "size": "Taglia",
+      "traits": "Tratti"
+    },
+    "class": {
+      "title": "Scegli una classe",
+      "hitDie": "Dado vita",
+      "primaryAbility": "Caratteristica principale",
+      "savingThrows": "Competenze nei tiri salvezza",
+      "casterProgression": "Lancio di incantesimi"
+    },
+    "background": {
+      "title": "Scegli un background",
+      "skillProficiencies": "Competenze nelle abilità",
+      "feature": "Capacità"
+    },
+    "abilities": {
+      "title": "Determina le caratteristiche",
+      "method": "Metodo",
+      "standardArray": "Array standard",
+      "pointBuy": "Punti caratteristica",
+      "manual": "Manuale / tirato",
+      "remaining": "Rimanenti",
+      "pointsSpent": "Punti spesi",
+      "totalWithRace": "Totale (con bonus di specie)"
+    },
+    "skills": {
+      "title": "Scegli le competenze nelle abilità",
+      "chooseCount": "Scegline {{count}} dalla lista della tua classe",
+      "fromBackground": "Concesse dal background"
+    },
+    "details": {
+      "title": "Dettagli del personaggio",
+      "name": "Nome",
+      "playerName": "Nome del giocatore",
+      "alignment": "Allineamento",
+      "age": "Età",
+      "appearance": "Aspetto",
+      "backstory": "Storia"
+    },
+    "review": {
+      "title": "Riepilogo e conferma",
+      "abilityScores": "Punteggi caratteristica",
+      "hitPoints": "Punti Ferita",
+      "armorClass": "Classe Armatura",
+      "proficiencyBonus": "Bonus competenza",
+      "createCharacter": "Crea personaggio"
+    },
+    "validation": {
+      "chooseRace": "Scegli una specie per continuare.",
+      "chooseSubrace": "Scegli una sottorazza per continuare.",
+      "chooseClass": "Scegli una classe per continuare.",
+      "chooseBackground": "Scegli un background per continuare.",
+      "allocateAbilities": "Assegna tutte le caratteristiche per continuare.",
+      "chooseSkills": "Scegli {{count}} abilità per continuare.",
+      "enterName": "Inserisci un nome per continuare."
+    }
+  },
+  "skills": {
+    "acrobatics": "Acrobazia",
+    "animalHandling": "Addestrare Animali",
+    "arcana": "Arcano",
+    "athletics": "Atletica",
+    "deception": "Inganno",
+    "history": "Storia",
+    "insight": "Intuizione",
+    "intimidation": "Intimidire",
+    "investigation": "Indagare",
+    "medicine": "Medicina",
+    "nature": "Natura",
+    "perception": "Percezione",
+    "performance": "Intrattenere",
+    "persuasion": "Persuasione",
+    "religion": "Religione",
+    "sleightOfHand": "Rapidità di Mano",
+    "stealth": "Furtività",
+    "survival": "Sopravvivenza"
+  },
+  "abilities": {
+    "str": "Forza",
+    "dex": "Destrezza",
+    "con": "Costituzione",
+    "int": "Intelligenza",
+    "wis": "Saggezza",
+    "cha": "Carisma"
   }
 }

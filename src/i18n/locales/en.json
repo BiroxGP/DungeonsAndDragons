@@ -11,10 +11,120 @@
   },
   "home": {
     "noCharacters": "You don't have any characters yet.",
-    "newCharacter": "New character"
+    "newCharacter": "New character",
+    "open": "Open",
+    "delete": "Delete"
   },
   "footer": {
     "notice": "Built with the D&D 5.1 System Reference Document, provided under the Creative Commons Attribution 4.0 International License.",
     "about": "About & license"
+  },
+  "common": {
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish",
+    "cancel": "Cancel",
+    "none": "None",
+    "level": "Level"
+  },
+  "wizard": {
+    "steps": {
+      "race": "Species",
+      "class": "Class",
+      "background": "Background",
+      "abilities": "Abilities",
+      "skills": "Skills",
+      "details": "Details",
+      "review": "Review"
+    },
+    "race": {
+      "title": "Choose a species",
+      "subrace": "Subrace",
+      "abilityBonuses": "Ability score increases",
+      "speed": "Speed",
+      "size": "Size",
+      "traits": "Traits"
+    },
+    "class": {
+      "title": "Choose a class",
+      "hitDie": "Hit die",
+      "primaryAbility": "Primary ability",
+      "savingThrows": "Saving throw proficiencies",
+      "casterProgression": "Spellcasting"
+    },
+    "background": {
+      "title": "Choose a background",
+      "skillProficiencies": "Skill proficiencies",
+      "feature": "Feature"
+    },
+    "abilities": {
+      "title": "Determine ability scores",
+      "method": "Method",
+      "standardArray": "Standard array",
+      "pointBuy": "Point buy",
+      "manual": "Manual / rolled",
+      "remaining": "Remaining",
+      "pointsSpent": "Points spent",
+      "totalWithRace": "Total (with species bonus)"
+    },
+    "skills": {
+      "title": "Choose skill proficiencies",
+      "chooseCount": "Choose {{count}} from your class list",
+      "fromBackground": "Granted by background"
+    },
+    "details": {
+      "title": "Character details",
+      "name": "Name",
+      "playerName": "Player name",
+      "alignment": "Alignment",
+      "age": "Age",
+      "appearance": "Appearance",
+      "backstory": "Backstory"
+    },
+    "review": {
+      "title": "Review & finish",
+      "abilityScores": "Ability scores",
+      "hitPoints": "Hit points",
+      "armorClass": "Armor class",
+      "proficiencyBonus": "Proficiency bonus",
+      "createCharacter": "Create character"
+    },
+    "validation": {
+      "chooseRace": "Choose a species to continue.",
+      "chooseSubrace": "Choose a subrace to continue.",
+      "chooseClass": "Choose a class to continue.",
+      "chooseBackground": "Choose a background to continue.",
+      "allocateAbilities": "Assign all ability scores to continue.",
+      "chooseSkills": "Choose {{count}} skill(s) to continue.",
+      "enterName": "Enter a name to continue."
+    }
+  },
+  "skills": {
+    "acrobatics": "Acrobatics",
+    "animalHandling": "Animal Handling",
+    "arcana": "Arcana",
+    "athletics": "Athletics",
+    "deception": "Deception",
+    "history": "History",
+    "insight": "Insight",
+    "intimidation": "Intimidation",
+    "investigation": "Investigation",
+    "medicine": "Medicine",
+    "nature": "Nature",
+    "perception": "Perception",
+    "performance": "Performance",
+    "persuasion": "Persuasion",
+    "religion": "Religion",
+    "sleightOfHand": "Sleight of Hand",
+    "stealth": "Stealth",
+    "survival": "Survival"
+  },
+  "abilities": {
+    "str": "Strength",
+    "dex": "Dexterity",
+    "con": "Constitution",
+    "int": "Intelligence",
+    "wis": "Wisdom",
+    "cha": "Charisma"
   }
 }
