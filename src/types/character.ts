@@ -1,4 +1,4 @@
-import type { AbilityKey, SkillKey } from './content'
+import type { SkillKey } from './content'
 
 export const CHARACTER_SCHEMA_VERSION = 1
 
