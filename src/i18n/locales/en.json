@@ -25,7 +25,8 @@
     "finish": "Finish",
     "cancel": "Cancel",
     "none": "None",
-    "level": "Level"
+    "level": "Level",
+    "print": "Print"
   },
   "wizard": {
     "steps": {

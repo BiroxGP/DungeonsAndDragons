@@ -9,8 +9,7 @@ import { Button } from '../../../components/Button'
 
 interface StepProps {
   draft: Character
-  patch: (patch: Partial<Character>) => void
-  onFinish: () => void
+  onFinish: (maxHp: number) => void
 }
 
 function raceBonusFor(draft: Character, key: AbilityKey): number {
@@ -21,7 +20,7 @@ function raceBonusFor(draft: Character, key: AbilityKey): number {
   return base + (subrace?.abilityBonuses[key] ?? 0)
 }
 
-export function ReviewStep({ draft, patch, onFinish }: StepProps) {
+export function ReviewStep({ draft, onFinish }: StepProps) {
   const { t, i18n } = useTranslation()
   const race = getRace(draft.raceId)
   const cls = getClass(draft.classId)
@@ -39,11 +38,6 @@ export function ReviewStep({ draft, patch, onFinish }: StepProps) {
   const maxHp = hitPointsForLevel(cls.hitDie, draft.level, conMod)
   const armorClass = 10 + dexMod
   const profBonus = proficiencyBonus(draft.level)
-
-  const handleFinish = () => {
-    patch({ maxHp, currentHp: maxHp })
-    onFinish()
-  }
 
   return (
     <div>
@@ -95,7 +89,7 @@ export function ReviewStep({ draft, patch, onFinish }: StepProps) {
           .join(', ')}
       </div>
 
-      <Button onClick={handleFinish}>{t('wizard.review.createCharacter')}</Button>
+      <Button onClick={() => onFinish(maxHp)}>{t('wizard.review.createCharacter')}</Button>
     </div>
   )
 }

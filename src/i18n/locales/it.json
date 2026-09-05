@@ -25,7 +25,8 @@
     "finish": "Termina",
     "cancel": "Annulla",
     "none": "Nessuna",
-    "level": "Livello"
+    "level": "Livello",
+    "print": "Stampa"
   },
   "wizard": {
     "steps": {

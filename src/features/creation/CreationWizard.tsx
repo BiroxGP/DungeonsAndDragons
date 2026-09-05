@@ -6,6 +6,7 @@ import { createCharacter, type Character } from '../../types/character'
 import { useCharacterStore } from '../../store/characterStore'
 import { WIZARD_STEP_IDS, useWizardValidity } from './wizardSteps'
 import { getClass } from '../../data/classes'
+import { getBackground } from '../../data/backgrounds'
 import { RaceStep } from './steps/RaceStep'
 import { ClassStep } from './steps/ClassStep'
 import { BackgroundStep } from './steps/BackgroundStep'
@@ -34,9 +35,15 @@ export function CreationWizard({ onFinished }: CreationWizardProps) {
   const goNext = () => setStepIndex((i) => Math.min(WIZARD_STEP_IDS.length - 1, i + 1))
   const goBack = () => setStepIndex((i) => Math.max(0, i - 1))
 
-  const handleFinish = () => {
-    saveCharacter(draft)
-    onFinished(draft.id)
+  const handleFinish = (maxHp: number) => {
+    const background = getBackground(draft.backgroundId)
+    const skills = { ...draft.skills }
+    background?.skillProficiencies.forEach((skill) => {
+      if (!skills[skill]?.proficient) skills[skill] = { proficient: true, expertise: false }
+    })
+    const finalCharacter: Character = { ...draft, skills, maxHp, currentHp: maxHp }
+    saveCharacter(finalCharacter)
+    onFinished(finalCharacter.id)
   }
 
   return (
@@ -50,7 +57,7 @@ export function CreationWizard({ onFinished }: CreationWizardProps) {
         {currentStepId === 'abilities' && <AbilitiesStep draft={draft} patch={patch} />}
         {currentStepId === 'skills' && <SkillsStep draft={draft} patch={patch} />}
         {currentStepId === 'details' && <DetailsStep draft={draft} patch={patch} />}
-        {currentStepId === 'review' && <ReviewStep draft={draft} patch={patch} onFinish={handleFinish} />}
+        {currentStepId === 'review' && <ReviewStep draft={draft} onFinish={handleFinish} />}
       </div>
 
       <div className="flex justify-between px-6 py-4 border-t border-stone-200 dark:border-stone-700">
