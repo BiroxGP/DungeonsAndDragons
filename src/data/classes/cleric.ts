@@ -15,6 +15,36 @@ export const cleric: CharacterClass = {
   skillChoices: { count: 2, from: ['history', 'insight', 'medicine', 'persuasion', 'religion'] },
   casterProgression: 'full',
   spellcastingAbility: 'wis',
+  startingEquipment: [
+    {
+      options: [
+        { itemIds: ['mace'], label: { en: 'A mace' } },
+        { itemIds: ['warhammer'], label: { en: 'A warhammer (if proficient)' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['scale-mail'], label: { en: 'Scale mail' } },
+        { itemIds: ['leather'], label: { en: 'Leather armor' } },
+        { itemIds: ['chain-mail'], label: { en: 'Chain mail (if proficient)' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['light-crossbow'], label: { en: 'A light crossbow and 20 bolts' } },
+        { itemIds: ['dagger'], label: { en: 'Any simple weapon' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['priests-pack'], label: { en: "A priest's pack" } },
+        { itemIds: ['explorers-pack'], label: { en: "An explorer's pack" } },
+      ],
+    },
+    {
+      options: [{ itemIds: ['shield', 'holy-symbol-amulet'], label: { en: 'A shield and a holy symbol' } }],
+    },
+  ],
   source: 'SRD5.1',
   traits: [
     {

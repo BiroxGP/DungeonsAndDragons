@@ -13,6 +13,29 @@ export const paladin: CharacterClass = {
   skillChoices: { count: 2, from: ['athletics', 'insight', 'intimidation', 'medicine', 'persuasion', 'religion'] },
   casterProgression: 'half',
   spellcastingAbility: 'cha',
+  startingEquipment: [
+    {
+      options: [
+        { itemIds: ['longsword', 'shield'], label: { en: 'A martial weapon and a shield' } },
+        { itemIds: ['longsword', 'battleaxe'], label: { en: 'Two martial weapons' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['javelin', 'javelin', 'javelin', 'javelin', 'javelin'], label: { en: 'Five javelins' } },
+        { itemIds: ['spear'], label: { en: 'Any simple melee weapon' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['priests-pack'], label: { en: "A priest's pack" } },
+        { itemIds: ['explorers-pack'], label: { en: "An explorer's pack" } },
+      ],
+    },
+    {
+      options: [{ itemIds: ['chain-mail', 'holy-symbol-amulet'], label: { en: 'Chain mail and a holy symbol' } }],
+    },
+  ],
   source: 'SRD5.1',
   traits: [
     {

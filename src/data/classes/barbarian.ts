@@ -17,6 +17,23 @@ export const barbarian: CharacterClass = {
     from: ['animalHandling', 'athletics', 'intimidation', 'nature', 'perception', 'survival'],
   },
   casterProgression: 'none',
+  startingEquipment: [
+    {
+      options: [
+        { itemIds: ['greataxe'], label: { en: 'A greataxe' } },
+        { itemIds: ['longsword'], label: { en: 'Any martial melee weapon' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['handaxe', 'handaxe'], label: { en: 'Two handaxes' } },
+        { itemIds: ['spear'], label: { en: 'Any simple weapon' } },
+      ],
+    },
+    {
+      options: [{ itemIds: ['explorers-pack', 'javelin', 'javelin', 'javelin', 'javelin'], label: { en: "An explorer's pack and four javelins" } }],
+    },
+  ],
   source: 'SRD5.1',
   traits: [
     {

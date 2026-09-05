@@ -13,6 +13,27 @@ export const wizard: CharacterClass = {
   skillChoices: { count: 2, from: ['arcana', 'history', 'insight', 'investigation', 'medicine', 'religion'] },
   casterProgression: 'full',
   spellcastingAbility: 'int',
+  startingEquipment: [
+    {
+      options: [
+        { itemIds: ['quarterstaff'], label: { en: 'A quarterstaff' } },
+        { itemIds: ['dagger'], label: { en: 'A dagger' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['component-pouch'], label: { en: 'A component pouch' } },
+        { itemIds: ['arcane-focus-crystal'], label: { en: 'An arcane focus' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['scholars-pack'], label: { en: "A scholar's pack" } },
+        { itemIds: ['explorers-pack'], label: { en: "An explorer's pack" } },
+      ],
+    },
+    { options: [{ itemIds: ['spellbook'], label: { en: 'A spellbook' } }] },
+  ],
   source: 'SRD5.1',
   traits: [
     {

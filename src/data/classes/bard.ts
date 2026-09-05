@@ -22,6 +22,30 @@ export const bard: CharacterClass = {
   },
   casterProgression: 'full',
   spellcastingAbility: 'cha',
+  startingEquipment: [
+    {
+      options: [
+        { itemIds: ['rapier'], label: { en: 'A rapier' } },
+        { itemIds: ['longsword'], label: { en: 'A longsword' } },
+        { itemIds: ['dagger'], label: { en: 'Any simple weapon' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['diplomats-pack'], label: { en: "A diplomat's pack" } },
+        { itemIds: ['entertainers-pack'], label: { en: "An entertainer's pack" } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['musical-instrument-lute'], label: { en: 'A lute' } },
+        { itemIds: ['musical-instrument-lute'], label: { en: 'Any other musical instrument' } },
+      ],
+    },
+    {
+      options: [{ itemIds: ['leather', 'dagger'], label: { en: 'Leather armor and a dagger' } }],
+    },
+  ],
   source: 'SRD5.1',
   traits: [
     {

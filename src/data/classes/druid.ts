@@ -18,6 +18,28 @@ export const druid: CharacterClass = {
   },
   casterProgression: 'full',
   spellcastingAbility: 'wis',
+  startingEquipment: [
+    {
+      options: [
+        { itemIds: ['shield'], label: { en: 'A wooden shield' } },
+        { itemIds: ['spear'], label: { en: 'Any simple weapon' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['scimitar'], label: { en: 'A scimitar' } },
+        { itemIds: ['club'], label: { en: 'Any simple melee weapon' } },
+      ],
+    },
+    {
+      options: [
+        {
+          itemIds: ['leather', 'explorers-pack', 'druidic-focus-mistletoe'],
+          label: { en: 'Leather armor, an explorer’s pack, and a druidic focus' },
+        },
+      ],
+    },
+  ],
   source: 'SRD5.1',
   traits: [
     {

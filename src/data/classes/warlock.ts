@@ -13,6 +13,27 @@ export const warlock: CharacterClass = {
   skillChoices: { count: 2, from: ['arcana', 'deception', 'history', 'intimidation', 'investigation', 'nature', 'religion'] },
   casterProgression: 'pact',
   spellcastingAbility: 'cha',
+  startingEquipment: [
+    {
+      options: [
+        { itemIds: ['light-crossbow'], label: { en: 'A light crossbow and 20 bolts' } },
+        { itemIds: ['dagger'], label: { en: 'Any simple weapon' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['component-pouch'], label: { en: 'A component pouch' } },
+        { itemIds: ['arcane-focus-crystal'], label: { en: 'An arcane focus' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['scholars-pack'], label: { en: "A scholar's pack" } },
+        { itemIds: ['dungeoneers-pack'], label: { en: "A dungeoneer's pack" } },
+      ],
+    },
+    { options: [{ itemIds: ['leather', 'dagger', 'dagger', 'dagger'], label: { en: 'Leather armor, any simple weapon, and two daggers' } }] },
+  ],
   source: 'SRD5.1',
   traits: [
     {

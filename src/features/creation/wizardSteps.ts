@@ -5,15 +5,18 @@ import { getClass } from '../../data/classes'
 import { getBackground } from '../../data/backgrounds'
 import { totalPointBuySpent, POINT_BUY_BUDGET, STANDARD_ARRAY } from '../../lib/rules'
 
-export const WIZARD_STEP_IDS = ['race', 'class', 'background', 'abilities', 'skills', 'details', 'review'] as const
+export const WIZARD_STEP_IDS = ['race', 'class', 'background', 'abilities', 'skills', 'equipment', 'details', 'review'] as const
 export type WizardStepId = (typeof WIZARD_STEP_IDS)[number]
+
+/** Chosen option index per starting-equipment choice group (group index -> option index). */
+export type EquipmentSelections = Record<number, number>
 
 /**
  * Computes step validity once, from the draft character, so it can be
  * shared by the step bar and the Next button instead of being
  * recalculated independently in multiple components.
  */
-export function useWizardValidity(draft: Character) {
+export function useWizardValidity(draft: Character, equipmentSelections: EquipmentSelections) {
   return useMemo(() => {
     const race = getRace(draft.raceId)
     const cls = getClass(draft.classId)
@@ -35,6 +38,8 @@ export function useWizardValidity(draft: Character) {
     const chosenSkillCount = Object.values(draft.skills).filter((s) => s?.proficient).length
     const skillsValid = chosenSkillCount === requiredSkillCount
 
+    const equipmentValid = cls ? cls.startingEquipment.every((_, i) => equipmentSelections[i] !== undefined) : false
+
     const detailsValid = draft.name.trim().length > 0
 
     const invalid: Record<WizardStepId, boolean> = {
@@ -43,6 +48,7 @@ export function useWizardValidity(draft: Character) {
       background: !backgroundValid,
       abilities: !abilitiesValid,
       skills: !skillsValid,
+      equipment: !equipmentValid,
       details: !detailsValid,
       review: false,
     }
@@ -50,7 +56,14 @@ export function useWizardValidity(draft: Character) {
     return {
       invalid,
       invalidList: WIZARD_STEP_IDS.map((id) => invalid[id]),
-      isComplete: !invalid.race && !invalid.class && !invalid.background && !invalid.abilities && !invalid.skills && !invalid.details,
+      isComplete:
+        !invalid.race &&
+        !invalid.class &&
+        !invalid.background &&
+        !invalid.abilities &&
+        !invalid.skills &&
+        !invalid.equipment &&
+        !invalid.details,
     }
-  }, [draft])
+  }, [draft, equipmentSelections])
 }

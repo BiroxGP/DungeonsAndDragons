@@ -16,6 +16,27 @@ export const ranger: CharacterClass = {
   },
   casterProgression: 'half',
   spellcastingAbility: 'wis',
+  startingEquipment: [
+    {
+      options: [
+        { itemIds: ['scale-mail'], label: { en: 'Scale mail' } },
+        { itemIds: ['leather'], label: { en: 'Leather armor' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['shortsword', 'shortsword'], label: { en: 'Two shortswords' } },
+        { itemIds: ['spear', 'spear'], label: { en: 'Two simple melee weapons' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['dungeoneers-pack'], label: { en: "A dungeoneer's pack" } },
+        { itemIds: ['explorers-pack'], label: { en: "An explorer's pack" } },
+      ],
+    },
+    { options: [{ itemIds: ['longbow'], label: { en: 'A longbow and a quiver of 20 arrows' } }] },
+  ],
   source: 'SRD5.1',
   traits: [
     {

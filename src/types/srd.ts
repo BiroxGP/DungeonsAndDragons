@@ -31,6 +31,22 @@ export interface Subrace {
 
 export type CasterProgression = 'none' | 'full' | 'half' | 'third' | 'pact'
 
+/**
+ * One option within a starting-equipment choice group, e.g. "(a) a martial
+ * weapon and a shield". `itemIds` may repeat an id to represent quantity
+ * (e.g. two daggers). A generic SRD category like "any simple weapon" is
+ * resolved to one representative item — this is a character generator, not
+ * a full equipment-picker for every weapon in the category.
+ */
+export interface EquipmentOption {
+  itemIds: string[]
+  label: LocalizedText
+}
+
+export interface EquipmentChoiceGroup {
+  options: EquipmentOption[]
+}
+
 export interface CharacterClass {
   id: string
   name: LocalizedText
@@ -44,6 +60,7 @@ export interface CharacterClass {
   skillChoices: { count: number; from: SkillKey[] }
   casterProgression: CasterProgression
   spellcastingAbility?: AbilityKey
+  startingEquipment: EquipmentChoiceGroup[]
   traits: Trait[]
   source: 'SRD5.1'
 }

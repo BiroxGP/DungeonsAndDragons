@@ -13,6 +13,27 @@ export const sorcerer: CharacterClass = {
   skillChoices: { count: 2, from: ['arcana', 'deception', 'insight', 'intimidation', 'persuasion', 'religion'] },
   casterProgression: 'full',
   spellcastingAbility: 'cha',
+  startingEquipment: [
+    {
+      options: [
+        { itemIds: ['light-crossbow'], label: { en: 'A light crossbow and 20 bolts' } },
+        { itemIds: ['dagger'], label: { en: 'Any simple weapon' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['component-pouch'], label: { en: 'A component pouch' } },
+        { itemIds: ['arcane-focus-crystal'], label: { en: 'An arcane focus' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['dungeoneers-pack'], label: { en: "A dungeoneer's pack" } },
+        { itemIds: ['explorers-pack'], label: { en: "An explorer's pack" } },
+      ],
+    },
+    { options: [{ itemIds: ['dagger', 'dagger'], label: { en: 'Two daggers' } }] },
+  ],
   source: 'SRD5.1',
   traits: [
     {

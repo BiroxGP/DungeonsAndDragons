@@ -15,6 +15,32 @@ export const fighter: CharacterClass = {
     from: ['acrobatics', 'animalHandling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'],
   },
   casterProgression: 'none',
+  startingEquipment: [
+    {
+      options: [
+        { itemIds: ['chain-mail'], label: { en: 'Chain mail' } },
+        { itemIds: ['leather', 'longbow'], label: { en: 'Leather armor, longbow, and 20 arrows' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['longsword', 'shield'], label: { en: 'A martial weapon and a shield' } },
+        { itemIds: ['longsword', 'battleaxe'], label: { en: 'Two martial weapons' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['light-crossbow'], label: { en: 'A light crossbow and 20 bolts' } },
+        { itemIds: ['handaxe', 'handaxe'], label: { en: 'Two handaxes' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['dungeoneers-pack'], label: { en: "A dungeoneer's pack" } },
+        { itemIds: ['explorers-pack'], label: { en: "An explorer's pack" } },
+      ],
+    },
+  ],
   source: 'SRD5.1',
   traits: [
     {

@@ -18,6 +18,32 @@ export const rogue: CharacterClass = {
     ],
   },
   casterProgression: 'none',
+  startingEquipment: [
+    {
+      options: [
+        { itemIds: ['rapier'], label: { en: 'A rapier' } },
+        { itemIds: ['shortsword'], label: { en: 'A shortsword' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['shortbow'], label: { en: 'A shortbow and quiver of 20 arrows' } },
+        { itemIds: ['shortsword'], label: { en: 'A shortsword' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['burglars-pack'], label: { en: "A burglar's pack" } },
+        { itemIds: ['dungeoneers-pack'], label: { en: "A dungeoneer's pack" } },
+        { itemIds: ['explorers-pack'], label: { en: "An explorer's pack" } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['leather', 'dagger', 'dagger', 'thieves-tools'], label: { en: 'Leather armor, two daggers, and thieves’ tools' } },
+      ],
+    },
+  ],
   source: 'SRD5.1',
   traits: [
     {

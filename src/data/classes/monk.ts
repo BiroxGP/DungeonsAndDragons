@@ -12,6 +12,21 @@ export const monk: CharacterClass = {
   toolProficiencies: ["One type of artisan's tools or one musical instrument"],
   skillChoices: { count: 2, from: ['acrobatics', 'athletics', 'history', 'insight', 'religion', 'stealth'] },
   casterProgression: 'none',
+  startingEquipment: [
+    {
+      options: [
+        { itemIds: ['shortsword'], label: { en: 'A shortsword' } },
+        { itemIds: ['spear'], label: { en: 'Any simple weapon' } },
+      ],
+    },
+    {
+      options: [
+        { itemIds: ['dungeoneers-pack'], label: { en: "A dungeoneer's pack" } },
+        { itemIds: ['explorers-pack'], label: { en: "An explorer's pack" } },
+      ],
+    },
+    { options: [{ itemIds: ['dart'], label: { en: '10 darts' } }] },
+  ],
   source: 'SRD5.1',
   traits: [
     {
