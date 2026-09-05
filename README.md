@@ -14,14 +14,20 @@ code.
 
 ## Status
 
-Functional end to end: a 7-step character creation wizard (species,
-class, background, ability scores, skills, details, review), a
-character sheet (screen + print), and a play mode (HP, spell slots,
-rest, XP/leveling). SRD content currently covers all 12 classes (SRD
-5.1's 9 races + 4 subraces, the single background and feat the SRD
-publishes, full weapon/armor/equipment tables, and cantrips + spells
-of levels 1–3). Class features are recorded up to level 20; spells of
-level 4+ and additional subclasses are the natural next expansion.
+Functional end to end: an 8-step character creation wizard (species,
+class, background, ability scores, skills, starting equipment,
+details, review), a character sheet (screen + print), and a play mode
+(HP, spell slots, rest, XP/leveling). SRD content covers all 12
+classes (SRD 5.1's 9 races + 4 subraces, the single background and
+feat the SRD publishes, full weapon/armor/equipment tables, and all
+spells from cantrips through 9th level — 318 in total). Class
+features are recorded up to level 20.
+
+Note on subclasses: SRD 5.1 publishes exactly **one** subclass per
+class (e.g. only the Circle of the Land for Druids, only the Fiend
+patron for Warlocks) — every other Player's Handbook subclass is not
+open content, so it can't be added here while staying within the
+CC-BY-4.0 terms.
 
 ## Development
 
@@ -58,16 +64,21 @@ i dettagli di licenza, e [LICENSE](LICENSE) per la licenza MIT del codice.
 
 ## Stato
 
-Funzionante da cima a fondo: un wizard di creazione personaggio in 7
+Funzionante da cima a fondo: un wizard di creazione personaggio in 8
 passi (specie, classe, background, caratteristiche, abilità,
-dettagli, riepilogo), una scheda personaggio (schermo + stampa) e una
-modalità Gioca (PF, slot incantesimo, riposo, PX/livello). I contenuti
-SRD coprono al momento tutte le 12 classi (le 9 razze + 4 sottorazze
-della SRD 5.1, l'unico background e talento pubblicati dalla SRD, le
-tabelle complete di armi/armature/equipaggiamento, e trucchetti +
-incantesimi di livello 1-3). I tratti di classe sono registrati fino
-al livello 20; incantesimi di livello 4+ e sottoclassi aggiuntive sono
-la naturale espansione successiva.
+equipaggiamento iniziale, dettagli, riepilogo), una scheda personaggio
+(schermo + stampa) e una modalità Gioca (PF, slot incantesimo, riposo,
+PX/livello). I contenuti SRD coprono tutte le 12 classi (le 9 razze +
+4 sottorazze della SRD 5.1, l'unico background e talento pubblicati
+dalla SRD, le tabelle complete di armi/armature/equipaggiamento, e
+tutti gli incantesimi dai trucchetti al 9° livello — 318 in totale). I
+tratti di classe sono registrati fino al livello 20.
+
+Nota sulle sottoclassi: la SRD 5.1 pubblica esattamente **una**
+sottoclasse per classe (es. solo il Cerchio della Terra per il Druido,
+solo il Patto del Diavolo per il Warlock) — tutte le altre sottoclassi
+del Manuale del Giocatore non sono contenuto aperto, quindi non
+possono essere aggiunte restando nei termini della licenza CC-BY-4.0.
 
 ## Sviluppo
 
