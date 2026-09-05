@@ -1,6 +1,18 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import { createCharacter, CHARACTER_SCHEMA_VERSION, type Character } from '../types/character'
+import { createCharacter, CHARACTER_SCHEMA_VERSION, type Character, type SpellSlotTrack } from '../types/character'
+import { getClass } from '../data/classes'
+import { spellSlotsFor, PACT_MAGIC } from '../lib/spellSlots'
+
+function initialSpellSlots(character: Character): SpellSlotTrack[] {
+  const cls = getClass(character.classId)
+  if (!cls) return []
+  if (cls.casterProgression === 'pact') {
+    const pact = PACT_MAGIC[Math.min(20, character.level)]
+    return pact.slots > 0 ? [{ level: pact.slotLevel, max: pact.slots, used: 0 }] : []
+  }
+  return spellSlotsFor(cls.casterProgression, character.level).map((max, i) => ({ level: i + 1, max, used: 0 }))
+}
 
 interface CharacterStore {
   characters: Character[]
@@ -64,6 +76,7 @@ export const useCharacterStore = create<CharacterStore>()(
           kind: 'playCopy',
           sourceCharacterId: template.id,
           currentHp: template.maxHp,
+          spellSlots: initialSpellSlots(template),
           createdAt: now,
           updatedAt: now,
         }
