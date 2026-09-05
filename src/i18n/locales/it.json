@@ -1,0 +1,20 @@
+{
+  "app": {
+    "title": "Generatore di Personaggi D&D",
+    "subtitle": "Crea e gioca personaggi SRD 5.1 — libero e aperto"
+  },
+  "nav": {
+    "characters": "Personaggi",
+    "create": "Crea",
+    "sheet": "Scheda",
+    "play": "Gioca"
+  },
+  "home": {
+    "noCharacters": "Non hai ancora nessun personaggio.",
+    "newCharacter": "Nuovo personaggio"
+  },
+  "footer": {
+    "notice": "Realizzato con il System Reference Document 5.1 di D&D, distribuito con licenza Creative Commons Attribution 4.0 International.",
+    "about": "Info e licenza"
+  }
+}

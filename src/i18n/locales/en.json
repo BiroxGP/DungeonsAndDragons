@@ -1,0 +1,20 @@
+{
+  "app": {
+    "title": "D&D Character Generator",
+    "subtitle": "Build and play SRD 5.1 characters — free and open"
+  },
+  "nav": {
+    "characters": "Characters",
+    "create": "Create",
+    "sheet": "Sheet",
+    "play": "Play"
+  },
+  "home": {
+    "noCharacters": "You don't have any characters yet.",
+    "newCharacter": "New character"
+  },
+  "footer": {
+    "notice": "Built with the D&D 5.1 System Reference Document, provided under the Creative Commons Attribution 4.0 International License.",
+    "about": "About & license"
+  }
+}
