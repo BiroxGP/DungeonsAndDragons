@@ -51,7 +51,7 @@ export function SpellsStep({ draft, patch }: StepProps) {
   }
 
   const renderPool = (pool: Spell[], chosen: string[], max: number) => (
-    <div className="grid gap-2 sm:grid-cols-2 max-h-72 overflow-y-auto pr-1">
+    <div className="grid gap-2 max-h-96 overflow-y-auto pr-1">
       {pool.map((spell) => {
         const checked = chosen.includes(spell.id)
         const atCap = !checked && chosen.length >= max
@@ -59,7 +59,7 @@ export function SpellsStep({ draft, patch }: StepProps) {
           <label
             key={spell.id}
             className={
-              'flex items-center gap-3 rounded-lg border p-2 transition-colors ' +
+              'block rounded-lg border p-2 transition-colors ' +
               (checked
                 ? 'border-red-800 bg-red-50 dark:bg-red-950 cursor-pointer'
                 : atCap
@@ -74,13 +74,18 @@ export function SpellsStep({ draft, patch }: StepProps) {
               disabled={atCap}
               onChange={() => toggle(spell.id, pool, chosen, max)}
             />
-            <SchoolIcon school={spell.school} className="shrink-0" />
-            <div className="min-w-0">
-              <div className="font-semibold text-sm truncate">{localized(spell.name)}</div>
-              <div className="text-xs text-stone-500 dark:text-stone-400">
-                {t(`schools.${schoolKey(spell.school)}`)} · {spell.castingTime}
+            <div className="flex items-center gap-3">
+              <SchoolIcon school={spell.school} className="shrink-0" />
+              <div className="min-w-0">
+                <div className="font-semibold text-sm">{localized(spell.name)}</div>
+                <div className="text-xs text-stone-500 dark:text-stone-400">
+                  {t(`schools.${schoolKey(spell.school)}`)} · {spell.castingTime} · {spell.range} · {spell.components} · {spell.duration}
+                </div>
               </div>
             </div>
+            {checked && (
+              <p className="text-sm text-stone-600 dark:text-stone-300 mt-2 pl-[44px]">{localized(spell.description)}</p>
+            )}
           </label>
         )
       })}
