@@ -5,15 +5,12 @@ import { getClass } from '../../../data/classes'
 import { spellsForClass } from '../../../data/spells'
 import { abilityModifier } from '../../../lib/rules'
 import { getLevel1SpellRule, requiredSpellCount } from '../../../lib/spellcasting'
-import { SchoolIcon } from '../../../components/SchoolIcon'
+import { SpellIcon } from '../../../components/SpellIcon'
+import { schoolKey } from '../../../lib/schoolColors'
 
 interface StepProps {
   draft: Character
   patch: (patch: Partial<Character>) => void
-}
-
-function schoolKey(school: string): string {
-  return school.split(' ')[0].toLowerCase()
 }
 
 export function SpellsStep({ draft, patch }: StepProps) {
@@ -75,7 +72,7 @@ export function SpellsStep({ draft, patch }: StepProps) {
               onChange={() => toggle(spell.id, pool, chosen, max)}
             />
             <div className="flex items-center gap-3">
-              <SchoolIcon school={spell.school} className="shrink-0" />
+              <SpellIcon spellId={spell.id} school={spell.school} className="shrink-0" />
               <div className="min-w-0">
                 <div className="font-semibold text-sm">{localized(spell.name)}</div>
                 <div className="text-xs text-stone-500 dark:text-stone-400">

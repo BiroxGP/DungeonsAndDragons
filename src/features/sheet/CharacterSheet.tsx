@@ -7,7 +7,7 @@ import { getBackground } from '../../data/backgrounds'
 import { getSpell } from '../../data/spells'
 import { formatModifier } from '../../lib/rules'
 import { classImage } from '../../lib/images'
-import { SchoolIcon } from '../../components/SchoolIcon'
+import { SpellIcon } from '../../components/SpellIcon'
 import { useDerivedStats } from './useDerivedStats'
 import { SheetField } from '../../components/SheetField'
 import { Button } from '../../components/Button'
@@ -140,7 +140,7 @@ export function CharacterSheet({ character }: CharacterSheetProps) {
           <ul className="text-sm space-y-1.5">
             {knownSpells.map((spell) => (
               <li key={spell!.id} className="flex items-center gap-2">
-                <SchoolIcon school={spell!.school} size={20} className="shrink-0 print:hidden" />
+                <SpellIcon spellId={spell!.id} school={spell!.school} size={20} className="shrink-0 print:hidden" />
                 <span className="font-semibold">{localized(spell!.name)}</span>{' '}
                 <span className="text-stone-500 dark:text-stone-400 print:text-black">
                   ({spell!.level === 0 ? 'Cantrip' : `Lv${spell!.level}`})
