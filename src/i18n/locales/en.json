@@ -81,7 +81,10 @@
       "subtitle": "Choose the cantrips and 1st-level spells your character knows.",
       "cantrips": "Cantrips",
       "level1": "1st-level spells",
-      "noSpellsYet": "This class doesn't cast spells yet at 1st level."
+      "noSpellsYet": "This class doesn't cast spells yet at 1st level.",
+      "filterBySchool": "Filter by school of magic",
+      "allSchools": "All",
+      "noneForSchool": "No spells of this school in this list."
     },
     "equipment": {
       "title": "Choose starting equipment",

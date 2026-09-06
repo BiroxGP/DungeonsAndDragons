@@ -81,7 +81,10 @@
       "subtitle": "Scegli i trucchetti e gli incantesimi di 1° livello che il tuo personaggio conosce.",
       "cantrips": "Trucchetti",
       "level1": "Incantesimi di 1° livello",
-      "noSpellsYet": "Questa classe non lancia ancora incantesimi al 1° livello."
+      "noSpellsYet": "Questa classe non lancia ancora incantesimi al 1° livello.",
+      "filterBySchool": "Filtra per scuola di magia",
+      "allSchools": "Tutte",
+      "noneForSchool": "Nessun incantesimo di questa scuola in questo elenco."
     },
     "equipment": {
       "title": "Scegli l'equipaggiamento iniziale",
