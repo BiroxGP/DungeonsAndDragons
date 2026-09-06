@@ -35,10 +35,18 @@ export function BackgroundStep({ draft, patch }: StepProps) {
                 src={backgroundImage(b.id)}
                 alt=""
                 aria-hidden="true"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none'
+                }}
                 className="w-12 h-12 rounded-full object-cover shrink-0 border border-stone-300 dark:border-stone-600"
               />
               <div>
-                <div className="font-semibold">{localized(b.name)}</div>
+                <div className="font-semibold">
+                  {localized(b.name)}
+                  {b.source === 'original' && (
+                    <span className="ml-2 text-xs font-normal text-stone-400">({t('wizard.background.original')})</span>
+                  )}
+                </div>
                 <div className="text-sm text-stone-500 dark:text-stone-400 mt-1">{localized(b.description)}</div>
               </div>
             </button>

@@ -32,6 +32,13 @@ includes the following required attribution statement:
 - Italian translations of SRD content are unofficial, community/AI-assisted
   translations made for this project, not the official Italian localization
   of D&D (which is published separately and is not open-licensed).
+- SRD 5.1 publishes only one sample background (Acolyte). The additional
+  backgrounds in `src/data/backgrounds.ts` (marked `source: 'original'`) are
+  original content written for this project — mechanically built from
+  SRD-legal building blocks (the open skill list, generic equipment, an
+  invented feature) via the SRD's own "Customizing a Background" rule, not
+  reproductions of any Player's Handbook background text. The app labels
+  them as "original, non-SRD" wherever they're shown.
 
 ## Data provenance
 

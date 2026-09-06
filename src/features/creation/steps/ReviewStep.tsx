@@ -5,6 +5,7 @@ import { getClass } from '../../../data/classes'
 import { getBackground } from '../../../data/backgrounds'
 import { ABILITY_KEYS, type AbilityKey } from '../../../types/content'
 import { abilityModifier, formatModifier, hitPointsForLevel, proficiencyBonus } from '../../../lib/rules'
+import { getSpell } from '../../../data/spells'
 import { Button } from '../../../components/Button'
 
 interface StepProps {
@@ -88,6 +89,17 @@ export function ReviewStep({ draft, onFinish }: StepProps) {
           .map((s) => t(`skills.${s}`))
           .join(', ')}
       </div>
+
+      {draft.knownSpellIds.length > 0 && (
+        <div className="mb-6 text-sm">
+          <span className="text-stone-500 dark:text-stone-400">{t('wizard.spells.title')}: </span>
+          {draft.knownSpellIds
+            .map((id) => getSpell(id))
+            .filter(Boolean)
+            .map((spell) => localized(spell!.name))
+            .join(', ')}
+        </div>
+      )}
 
       <Button onClick={() => onFinish(maxHp)}>{t('wizard.review.createCharacter')}</Button>
     </div>

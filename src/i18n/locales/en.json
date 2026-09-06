@@ -35,6 +35,7 @@
       "background": "Background",
       "abilities": "Abilities",
       "skills": "Skills",
+      "spells": "Spells",
       "equipment": "Equipment",
       "details": "Details",
       "review": "Review"
@@ -57,7 +58,8 @@
     "background": {
       "title": "Choose a background",
       "skillProficiencies": "Skill proficiencies",
-      "feature": "Feature"
+      "feature": "Feature",
+      "original": "original, non-SRD"
     },
     "abilities": {
       "title": "Determine ability scores",
@@ -73,6 +75,13 @@
       "title": "Choose skill proficiencies",
       "chooseCount": "Choose {{count}} from your class list",
       "fromBackground": "Granted by background"
+    },
+    "spells": {
+      "title": "Choose spells",
+      "subtitle": "Choose the cantrips and 1st-level spells your character knows.",
+      "cantrips": "Cantrips",
+      "level1": "1st-level spells",
+      "noSpellsYet": "This class doesn't cast spells yet at 1st level."
     },
     "equipment": {
       "title": "Choose starting equipment",
@@ -102,6 +111,7 @@
       "chooseBackground": "Choose a background to continue.",
       "allocateAbilities": "Assign all ability scores to continue.",
       "chooseSkills": "Choose {{count}} skill(s) to continue.",
+      "chooseSpells": "Choose all the required cantrips and spells to continue.",
       "chooseEquipment": "Choose an option for each equipment group to continue.",
       "enterName": "Enter a name to continue."
     }

@@ -25,7 +25,7 @@ export function ClassStep({ draft, patch }: StepProps) {
             <button
               key={c.id}
               type="button"
-              onClick={() => patch({ classId: c.id, skills: {} })}
+              onClick={() => patch({ classId: c.id, skills: {}, knownSpellIds: [] })}
               className={
                 'text-left rounded-lg border p-4 transition-colors flex gap-3 ' +
                 (selected

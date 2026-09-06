@@ -12,6 +12,7 @@ import { ClassStep } from './steps/ClassStep'
 import { BackgroundStep } from './steps/BackgroundStep'
 import { AbilitiesStep } from './steps/AbilitiesStep'
 import { SkillsStep } from './steps/SkillsStep'
+import { SpellsStep } from './steps/SpellsStep'
 import { EquipmentStep } from './steps/EquipmentStep'
 import { DetailsStep } from './steps/DetailsStep'
 import { ReviewStep } from './steps/ReviewStep'
@@ -85,6 +86,7 @@ export function CreationWizard({ onFinished }: CreationWizardProps) {
         {currentStepId === 'background' && <BackgroundStep draft={draft} patch={patch} />}
         {currentStepId === 'abilities' && <AbilitiesStep draft={draft} patch={patch} />}
         {currentStepId === 'skills' && <SkillsStep draft={draft} patch={patch} />}
+        {currentStepId === 'spells' && <SpellsStep draft={draft} patch={patch} />}
         {currentStepId === 'equipment' && (
           <EquipmentStep
             draft={draft}
@@ -129,6 +131,8 @@ function validationKeyFor(stepId: string, invalid: Record<string, boolean>): str
       return 'allocateAbilities'
     case 'skills':
       return 'chooseSkills'
+    case 'spells':
+      return 'chooseSpells'
     case 'equipment':
       return 'chooseEquipment'
     case 'details':

@@ -35,6 +35,7 @@
       "background": "Background",
       "abilities": "Caratteristiche",
       "skills": "Abilità",
+      "spells": "Incantesimi",
       "equipment": "Equipaggiamento",
       "details": "Dettagli",
       "review": "Riepilogo"
@@ -57,7 +58,8 @@
     "background": {
       "title": "Scegli un background",
       "skillProficiencies": "Competenze nelle abilità",
-      "feature": "Capacità"
+      "feature": "Capacità",
+      "original": "originale, non SRD"
     },
     "abilities": {
       "title": "Determina le caratteristiche",
@@ -73,6 +75,13 @@
       "title": "Scegli le competenze nelle abilità",
       "chooseCount": "Scegline {{count}} dalla lista della tua classe",
       "fromBackground": "Concesse dal background"
+    },
+    "spells": {
+      "title": "Scegli gli incantesimi",
+      "subtitle": "Scegli i trucchetti e gli incantesimi di 1° livello che il tuo personaggio conosce.",
+      "cantrips": "Trucchetti",
+      "level1": "Incantesimi di 1° livello",
+      "noSpellsYet": "Questa classe non lancia ancora incantesimi al 1° livello."
     },
     "equipment": {
       "title": "Scegli l'equipaggiamento iniziale",
@@ -102,6 +111,7 @@
       "chooseBackground": "Scegli un background per continuare.",
       "allocateAbilities": "Assegna tutte le caratteristiche per continuare.",
       "chooseSkills": "Scegli {{count}} abilità per continuare.",
+      "chooseSpells": "Scegli tutti i trucchetti e gli incantesimi richiesti per continuare.",
       "chooseEquipment": "Scegli un'opzione per ogni gruppo di equipaggiamento per continuare.",
       "enterName": "Inserisci un nome per continuare."
     }

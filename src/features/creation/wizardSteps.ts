@@ -3,9 +3,21 @@ import type { Character } from '../../types/character'
 import { getRace } from '../../data/races'
 import { getClass } from '../../data/classes'
 import { getBackground } from '../../data/backgrounds'
-import { totalPointBuySpent, POINT_BUY_BUDGET, STANDARD_ARRAY } from '../../lib/rules'
+import { getSpell } from '../../data/spells'
+import { totalPointBuySpent, POINT_BUY_BUDGET, STANDARD_ARRAY, abilityModifier } from '../../lib/rules'
+import { getLevel1SpellRule, requiredSpellCount } from '../../lib/spellcasting'
 
-export const WIZARD_STEP_IDS = ['race', 'class', 'background', 'abilities', 'skills', 'equipment', 'details', 'review'] as const
+export const WIZARD_STEP_IDS = [
+  'race',
+  'class',
+  'background',
+  'abilities',
+  'skills',
+  'spells',
+  'equipment',
+  'details',
+  'review',
+] as const
 export type WizardStepId = (typeof WIZARD_STEP_IDS)[number]
 
 /** Chosen option index per starting-equipment choice group (group index -> option index). */
@@ -38,6 +50,14 @@ export function useWizardValidity(draft: Character, equipmentSelections: Equipme
     const chosenSkillCount = Object.values(draft.skills).filter((s) => s?.proficient).length
     const skillsValid = chosenSkillCount === requiredSkillCount
 
+    const spellRule = cls ? getLevel1SpellRule(cls.id) : undefined
+    const chosenCantrips = draft.knownSpellIds.filter((id) => getSpell(id)?.level === 0).length
+    const chosenLeveledSpells = draft.knownSpellIds.filter((id) => (getSpell(id)?.level ?? 0) > 0).length
+    const spellsValid = spellRule
+      ? chosenCantrips === spellRule.cantrips &&
+        chosenLeveledSpells === requiredSpellCount(spellRule, abilityModifier(draft.abilities[spellRule.ability]))
+      : true
+
     const equipmentValid = cls ? cls.startingEquipment.every((_, i) => equipmentSelections[i] !== undefined) : false
 
     const detailsValid = draft.name.trim().length > 0
@@ -48,6 +68,7 @@ export function useWizardValidity(draft: Character, equipmentSelections: Equipme
       background: !backgroundValid,
       abilities: !abilitiesValid,
       skills: !skillsValid,
+      spells: !spellsValid,
       equipment: !equipmentValid,
       details: !detailsValid,
       review: false,
@@ -62,6 +83,7 @@ export function useWizardValidity(draft: Character, equipmentSelections: Equipme
         !invalid.background &&
         !invalid.abilities &&
         !invalid.skills &&
+        !invalid.spells &&
         !invalid.equipment &&
         !invalid.details,
     }

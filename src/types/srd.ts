@@ -74,7 +74,12 @@ export interface Background {
   languages: number
   equipment: LocalizedText
   feature: Trait
-  source: 'SRD5.1'
+  /**
+   * 'SRD5.1' = transcribed from the official open document. 'original' =
+   * written for this project (SRD 5.1 only publishes one background,
+   * Acolyte); mechanically SRD-legal but not official WotC text.
+   */
+  source: 'SRD5.1' | 'original'
 }
 
 export interface Feat {
