@@ -6,6 +6,7 @@ import { getClass } from '../../data/classes'
 import { getBackground } from '../../data/backgrounds'
 import { getSpell } from '../../data/spells'
 import { formatModifier } from '../../lib/rules'
+import { classImage } from '../../lib/images'
 import { useDerivedStats } from './useDerivedStats'
 import { SheetField } from '../../components/SheetField'
 import { Button } from '../../components/Button'
@@ -43,13 +44,21 @@ export function CharacterSheet({ character }: CharacterSheetProps) {
         </Button>
       </div>
 
-      <header className="mb-4 border-b border-stone-300 dark:border-stone-600 pb-3 print:border-black">
-        <h1 className="font-heading text-2xl font-bold print:text-black">{character.name}</h1>
-        <p className="text-sm text-stone-500 dark:text-stone-400 print:text-black">
-          {localized(race.name)} {localized(subrace?.name)} · {localized(cls.name)} · {localized(background.name)} ·{' '}
-          {t('common.level')} {character.level}
-          {character.playerName && ` · ${character.playerName}`}
-        </p>
+      <header className="mb-4 border-b border-stone-300 dark:border-stone-600 pb-3 print:border-black flex items-center gap-3">
+        <img
+          src={classImage(cls.id)}
+          alt=""
+          aria-hidden="true"
+          className="w-14 h-14 rounded-full object-cover shrink-0 border border-stone-300 dark:border-stone-600 print:hidden"
+        />
+        <div>
+          <h1 className="font-heading text-2xl font-bold print:text-black">{character.name}</h1>
+          <p className="text-sm text-stone-500 dark:text-stone-400 print:text-black">
+            {localized(race.name)} {localized(subrace?.name)} · {localized(cls.name)} · {localized(background.name)} ·{' '}
+            {t('common.level')} {character.level}
+            {character.playerName && ` · ${character.playerName}`}
+          </p>
+        </div>
       </header>
 
       <section className="grid grid-cols-3 sm:grid-cols-6 gap-3 mb-4">

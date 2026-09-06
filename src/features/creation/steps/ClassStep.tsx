@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { CLASSES } from '../../../data/classes'
 import type { Character } from '../../../types/character'
+import { classImage } from '../../../lib/images'
 
 interface StepProps {
   draft: Character
@@ -26,14 +27,22 @@ export function ClassStep({ draft, patch }: StepProps) {
               type="button"
               onClick={() => patch({ classId: c.id, skills: {} })}
               className={
-                'text-left rounded-lg border p-4 transition-colors ' +
+                'text-left rounded-lg border p-4 transition-colors flex gap-3 ' +
                 (selected
                   ? 'border-red-800 bg-red-50 dark:bg-red-950'
                   : 'border-stone-200 dark:border-stone-700 hover:border-stone-400')
               }
             >
-              <div className="font-semibold">{localized(c.name)}</div>
-              <div className="text-sm text-stone-500 dark:text-stone-400 mt-1">{localized(c.description)}</div>
+              <img
+                src={classImage(c.id)}
+                alt=""
+                aria-hidden="true"
+                className="w-12 h-12 rounded-full object-cover shrink-0 border border-stone-300 dark:border-stone-600"
+              />
+              <div>
+                <div className="font-semibold">{localized(c.name)}</div>
+                <div className="text-sm text-stone-500 dark:text-stone-400 mt-1">{localized(c.description)}</div>
+              </div>
             </button>
           )
         })}

@@ -7,6 +7,7 @@ import { useDerivedStats } from '../sheet/useDerivedStats'
 import { hitPointsForLevel, levelForXp, abilityModifier } from '../../lib/rules'
 import { spellSlotsFor, PACT_MAGIC } from '../../lib/spellSlots'
 import { Button } from '../../components/Button'
+import { classImage } from '../../lib/images'
 
 interface PlayModeProps {
   character: Character
@@ -80,11 +81,19 @@ export function PlayMode({ character }: PlayModeProps) {
 
   return (
     <div className="max-w-3xl mx-auto w-full px-6 py-6">
-      <header className="mb-4 border-b border-stone-300 dark:border-stone-600 pb-3">
-        <h1 className="font-heading text-2xl font-bold">{character.name}</h1>
-        <p className="text-sm text-stone-500 dark:text-stone-400">
-          {race.name.en} · {cls.name.en} · {t('common.level')} {character.level}
-        </p>
+      <header className="mb-4 border-b border-stone-300 dark:border-stone-600 pb-3 flex items-center gap-3">
+        <img
+          src={classImage(cls.id)}
+          alt=""
+          aria-hidden="true"
+          className="w-14 h-14 rounded-full object-cover shrink-0 border border-stone-300 dark:border-stone-600"
+        />
+        <div>
+          <h1 className="font-heading text-2xl font-bold">{character.name}</h1>
+          <p className="text-sm text-stone-500 dark:text-stone-400">
+            {race.name.en} · {cls.name.en} · {t('common.level')} {character.level}
+          </p>
+        </div>
       </header>
 
       <section className="grid gap-3 sm:grid-cols-3 mb-6">
