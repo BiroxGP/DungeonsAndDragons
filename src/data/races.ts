@@ -27,8 +27,37 @@ export const RACES: Race[] = [
         name: { en: 'Hill Dwarf', it: 'Nano delle Colline' },
         description: { en: 'Hill dwarves have keen senses, deep intuition, and remarkable resilience.', it: 'I nani delle colline hanno sensi acuti, profonda intuizione e una resistenza notevole.' },
         abilityBonuses: { wis: 1 },
+        source: 'SRD5.1',
         traits: [
           { id: 'hill-dwarf-toughness', name: { en: 'Dwarven Toughness', it: 'Robustezza dei Nani' }, description: { en: 'Your hit point maximum increases by 1, and increases by 1 again every time you gain a level.', it: 'Il tuo massimo dei punti ferita aumenta di 1, e aumenta di 1 ogni volta che sali di livello.' } },
+        ],
+      },
+      {
+        id: 'forgeheart-dwarf',
+        name: { en: 'Forgeheart Dwarf', it: 'Nano del Cuore della Forgia' },
+        description: {
+          en: 'Raised beside the forge fires, forgeheart dwarves carry the heat of molten metal in their blood and a hammer’s rhythm in their hearts.',
+          it: 'Cresciuti accanto ai fuochi della forgia, i nani del cuore della forgia portano nel sangue il calore del metallo fuso e nel cuore il ritmo del martello.',
+        },
+        abilityBonuses: { str: 1 },
+        source: 'original',
+        traits: [
+          { id: 'forgeheart-dwarf-fire-resistance', name: { en: 'Fire-Forged Blood', it: 'Sangue Temprato dal Fuoco' }, description: { en: 'You have resistance to fire damage.', it: 'Hai resistenza al danno da fuoco.' } },
+          { id: 'forgeheart-dwarf-smiths-aptitude', name: { en: "Smith's Aptitude", it: 'Attitudine da Fabbro' }, description: { en: "You have proficiency with smith's tools. If you are already proficient with them, you add double your proficiency bonus to checks you make with them.", it: 'Sei competente con gli strumenti da fabbro. Se sei già competente, raddoppi il bonus di competenza nelle prove che effettui con essi.' } },
+        ],
+      },
+      {
+        id: 'frostkin-dwarf',
+        name: { en: 'Frostkin Dwarf', it: 'Nano di Sangue Gelido' },
+        description: {
+          en: 'Dwelling in the coldest depths and highest peaks, frostkin dwarves have blood that runs cool and nerves that never falter on the ice.',
+          it: 'Abitando le profondità più fredde e le vette più alte, i nani di sangue gelido hanno il sangue freddo e i nervi saldi sul ghiaccio.',
+        },
+        abilityBonuses: { dex: 1 },
+        source: 'original',
+        traits: [
+          { id: 'frostkin-dwarf-cold-resistance', name: { en: 'Cold-Blooded', it: 'Sangue Freddo' }, description: { en: 'You have resistance to cold damage.', it: 'Hai resistenza al danno da freddo.' } },
+          { id: 'frostkin-dwarf-sure-footed', name: { en: 'Sure-Footed', it: 'Piede Fermo' }, description: { en: 'You have advantage on saving throws and ability checks made to avoid falling prone.', it: 'Hai vantaggio ai tiri salvezza e alle prove di caratteristica effettuate per evitare di cadere prono.' } },
         ],
       },
     ],
@@ -57,10 +86,39 @@ export const RACES: Race[] = [
         name: { en: 'High Elf', it: 'Alto Elfo' },
         description: { en: 'High elves have a keen mind and a mastery of at least the basics of magic.', it: 'Gli alti elfi hanno una mente acuta e padroneggiano almeno le basi della magia.' },
         abilityBonuses: { int: 1 },
+        source: 'SRD5.1',
         traits: [
           { id: 'high-elf-weapon-training', name: { en: 'Elf Weapon Training', it: 'Addestramento alle Armi Elfiche' }, description: { en: 'You have proficiency with the longsword, shortsword, shortbow, and longbow.', it: 'Sei competente con spada lunga, spada corta, arco corto e arco lungo.' } },
           { id: 'high-elf-cantrip', name: { en: 'Cantrip', it: 'Trucchetto' }, description: { en: 'You know one cantrip of your choice from the wizard spell list; Intelligence is your spellcasting ability for it.', it: 'Conosci un trucchetto a tua scelta dalla lista incantesimi del mago; l’Intelligenza è la tua caratteristica da incantatore per esso.' } },
           { id: 'high-elf-extra-language', name: { en: 'Extra Language', it: 'Lingua Extra' }, description: { en: 'You can speak, read, and write one extra language of your choice.', it: 'Sai parlare, leggere e scrivere una lingua extra a tua scelta.' } },
+        ],
+      },
+      {
+        id: 'starlit-elf',
+        name: { en: 'Starlit Elf', it: 'Elfo delle Stelle' },
+        description: {
+          en: 'Under open night skies, starlit elves feel most at home, tracing old constellations that guide their steps and their magic.',
+          it: 'Sotto i cieli notturni aperti, gli elfi delle stelle si sentono più a loro agio, seguendo antiche costellazioni che guidano i loro passi e la loro magia.',
+        },
+        abilityBonuses: { cha: 1 },
+        source: 'original',
+        traits: [
+          { id: 'starlit-elf-nightsong', name: { en: 'Nightsong', it: 'Canto Notturno' }, description: { en: 'You know the Dancing Lights cantrip. Charisma is your spellcasting ability for it.', it: 'Conosci il trucchetto Luci Danzanti. Il Carisma è la tua caratteristica da incantatore per esso.' } },
+          { id: 'starlit-elf-stargazer', name: { en: 'Stargazer', it: 'Osservatore di Stelle' }, description: { en: 'You have proficiency in the Survival skill.', it: 'Sei competente nell’abilità Sopravvivenza.' } },
+        ],
+      },
+      {
+        id: 'marsh-elf',
+        name: { en: 'Marsh Elf', it: 'Elfo delle Paludi' },
+        description: {
+          en: 'At home among reeds and still waters, marsh elves move as easily through a bog as through a forest glade.',
+          it: 'A proprio agio tra canneti e acque immobili, gli elfi delle paludi si muovono con la stessa facilità in una palude come in una radura.',
+        },
+        abilityBonuses: { con: 1 },
+        source: 'original',
+        traits: [
+          { id: 'marsh-elf-swimmer', name: { en: 'Marsh-Born', it: 'Nato nella Palude' }, description: { en: 'You have a swimming speed equal to your walking speed.', it: 'Hai una velocità di nuoto pari alla tua velocità sul terreno.' } },
+          { id: 'marsh-elf-poison-resistance', name: { en: 'Bog-Warded Blood', it: 'Sangue Protetto dalla Palude' }, description: { en: 'You have resistance to poison damage.', it: 'Hai resistenza al danno da veleno.' } },
         ],
       },
     ],
@@ -88,8 +146,37 @@ export const RACES: Race[] = [
         name: { en: 'Lightfoot Halfling', it: 'Halfling Piedileggeri' },
         description: { en: 'Lightfoot halflings can easily hide from notice, even using other people as cover, and are inclined to be affable and easygoing.', it: 'Gli halfling piedileggeri riescono facilmente a nascondersi alla vista, persino usando altre persone come copertura, e sono per natura affabili e disinvolti.' },
         abilityBonuses: { cha: 1 },
+        source: 'SRD5.1',
         traits: [
           { id: 'lightfoot-stealthy', name: { en: 'Naturally Stealthy', it: 'Furtività Naturale' }, description: { en: 'You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.', it: 'Puoi tentare di nasconderti anche quando sei celato solo da una creatura di taglia almeno superiore alla tua.' } },
+        ],
+      },
+      {
+        id: 'hearth-halfling',
+        name: { en: 'Hearth Halfling', it: 'Halfling del Focolare' },
+        description: {
+          en: 'Hearth halflings are the keepers of the family fire, cherished for their steady hands and steadier hearts.',
+          it: 'Gli halfling del focolare sono i custodi del fuoco di famiglia, apprezzati per le mani salde e il cuore ancora più saldo.',
+        },
+        abilityBonuses: { con: 1 },
+        source: 'original',
+        traits: [
+          { id: 'hearth-halfling-hardy', name: { en: 'Hardy Constitution', it: 'Costituzione Robusta' }, description: { en: 'You have advantage on saving throws against disease.', it: 'Hai vantaggio ai tiri salvezza contro le malattie.' } },
+          { id: 'hearth-halfling-cooks-aptitude', name: { en: "Cook's Aptitude", it: 'Attitudine da Cuoco' }, description: { en: "You have proficiency with cook's utensils.", it: 'Sei competente con gli utensili da cucina.' } },
+        ],
+      },
+      {
+        id: 'wanderer-halfling',
+        name: { en: 'Wanderer Halfling', it: 'Halfling Girovago' },
+        description: {
+          en: 'Not every halfling stays close to home — wanderer halflings take to the open road, trading tales and trinkets from town to town.',
+          it: 'Non tutti gli halfling restano vicino a casa: gli halfling girovaghi prendono la strada aperta, scambiando racconti e ninnoli di città in città.',
+        },
+        abilityBonuses: { wis: 1 },
+        source: 'original',
+        traits: [
+          { id: 'wanderer-halfling-pathfinding', name: { en: 'Sure Path', it: 'Sentiero Sicuro' }, description: { en: 'You have proficiency in the Survival skill.', it: 'Sei competente nell’abilità Sopravvivenza.' } },
+          { id: 'wanderer-halfling-road-sense', name: { en: 'Road Sense', it: 'Senso della Strada' }, description: { en: 'You have proficiency in the Perception skill.', it: 'Sei competente nell’abilità Percezione.' } },
         ],
       },
     ],
@@ -107,6 +194,36 @@ export const RACES: Race[] = [
     languages: ['Common', 'One extra language of your choice'],
     source: 'SRD5.1',
     traits: [],
+    subraces: [
+      {
+        id: 'wayfarer-human',
+        name: { en: 'Wayfarer Human', it: 'Umano Viandante' },
+        description: {
+          en: 'Always chasing the horizon, wayfarer humans call the road their true home, forever curious about what lies beyond the next hill.',
+          it: 'Sempre in cerca dell’orizzonte, gli umani viandanti chiamano la strada la loro vera casa, per sempre curiosi di ciò che si trova oltre la prossima collina.',
+        },
+        abilityBonuses: {},
+        source: 'original',
+        traits: [
+          { id: 'wayfarer-human-well-traveled', name: { en: 'Well-Traveled', it: 'Ben Viaggiato' }, description: { en: 'You have proficiency in the Survival skill.', it: 'Sei competente nell’abilità Sopravvivenza.' } },
+          { id: 'wayfarer-human-quick-step', name: { en: 'Quick Step', it: 'Passo Rapido' }, description: { en: 'Your walking speed increases by 5 feet.', it: 'La tua velocità sul terreno aumenta di 1,5 metri.' } },
+        ],
+      },
+      {
+        id: 'artisan-human',
+        name: { en: 'Artisan Human', it: 'Umano Artigiano' },
+        description: {
+          en: 'Artisan humans take pride in the work of their hands, passing trade secrets from parent to child across generations.',
+          it: 'Gli umani artigiani sono fieri del lavoro delle proprie mani, tramandando i segreti del mestiere di generazione in generazione.',
+        },
+        abilityBonuses: {},
+        source: 'original',
+        traits: [
+          { id: 'artisan-human-tool-training', name: { en: 'Tool Training', it: 'Addestramento negli Strumenti' }, description: { en: "You have proficiency with one type of artisan's tools of your choice.", it: 'Sei competente con un tipo di strumenti da artigiano a tua scelta.' } },
+          { id: 'artisan-human-keen-eye', name: { en: 'Keen Eye', it: 'Occhio Attento' }, description: { en: 'You have proficiency in the Investigation skill.', it: 'Sei competente nell’abilità Indagare.' } },
+        ],
+      },
+    ],
   },
   {
     id: 'dragonborn',
@@ -139,6 +256,36 @@ export const RACES: Race[] = [
       },
       { id: 'dragonborn-damage-resistance', name: { en: 'Damage Resistance', it: 'Resistenza al Danno' }, description: { en: 'You have resistance to the damage type associated with your draconic ancestry.', it: 'Hai resistenza al tipo di danno associato alla tua ascendenza draconica.' } },
     ],
+    subraces: [
+      {
+        id: 'desert-dragonborn',
+        name: { en: 'Desert Dragonborn', it: 'Dragonide del Deserto' },
+        description: {
+          en: 'Hailing from sun-scorched wastes, desert dragonborn endure heat and thirst that would fell lesser travelers.',
+          it: 'Provenienti da desolazioni arse dal sole, i dragonidi del deserto resistono a calore e sete che abbatterebbero viaggiatori meno forti.',
+        },
+        abilityBonuses: { con: 1 },
+        source: 'original',
+        traits: [
+          { id: 'desert-dragonborn-heat-resistance', name: { en: 'Sun-Scaled Hide', it: 'Pelle Squamata dal Sole' }, description: { en: 'You have resistance to fire damage, in addition to any resistance granted by your draconic ancestry.', it: 'Hai resistenza al danno da fuoco, in aggiunta a qualsiasi resistenza concessa dalla tua ascendenza draconica.' } },
+          { id: 'desert-dragonborn-survivor', name: { en: 'Wasteland Survivor', it: 'Sopravvissuto delle Terre Desolate' }, description: { en: 'You have proficiency in the Survival skill.', it: 'Sei competente nell’abilità Sopravvivenza.' } },
+        ],
+      },
+      {
+        id: 'storm-dragonborn',
+        name: { en: 'Storm Dragonborn', it: 'Dragonide della Tempesta' },
+        description: {
+          en: 'Born amid rolling thunderheads, storm dragonborn move with the restless energy of an approaching gale.',
+          it: 'Nati tra nubi temporalesche, i dragonidi della tempesta si muovono con l’energia inquieta di un uragano in arrivo.',
+        },
+        abilityBonuses: { dex: 1 },
+        source: 'original',
+        traits: [
+          { id: 'storm-dragonborn-lightning-resistance', name: { en: 'Storm-Scaled Hide', it: 'Pelle Squamata dalla Tempesta' }, description: { en: 'You have resistance to lightning damage, in addition to any resistance granted by your draconic ancestry.', it: 'Hai resistenza al danno da fulmine, in aggiunta a qualsiasi resistenza concessa dalla tua ascendenza draconica.' } },
+          { id: 'storm-dragonborn-keen-hearing', name: { en: 'Storm Sense', it: 'Senso della Tempesta' }, description: { en: 'You have proficiency in the Perception skill.', it: 'Sei competente nell’abilità Percezione.' } },
+        ],
+      },
+    ],
   },
   {
     id: 'gnome',
@@ -162,6 +309,7 @@ export const RACES: Race[] = [
         name: { en: 'Rock Gnome', it: 'Gnomo delle Rocce' },
         description: { en: 'Rock gnomes have a natural inventiveness and hardiness beyond that of other gnomes.', it: 'Gli gnomi delle rocce hanno un’inventiva e una resistenza naturali superiori a quelle degli altri gnomi.' },
         abilityBonuses: { con: 1 },
+        source: 'SRD5.1',
         traits: [
           { id: 'rock-gnome-artificers-lore', name: { en: "Artificer's Lore", it: 'Sapienza dell’Artificiere' }, description: { en: 'Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you add double your proficiency bonus.', it: 'Quando effettui una prova di Intelligenza (Storia) relativa a oggetti magici, oggetti alchemici o dispositivi tecnologici, raddoppi il tuo bonus di competenza.' } },
           {
@@ -172,6 +320,34 @@ export const RACES: Race[] = [
               it: 'Sei competente con gli strumenti da meccanico. Puoi spendere 1 ora e 10 mo di materiali per costruire un minuscolo congegno a orologeria (CA 5, 1 pf) — un giocattolo a molla, un accendifuoco o un carillon — che smette di funzionare dopo 24 ore a meno che non venga riparato. Puoi averne fino a tre attivi contemporaneamente.',
             },
           },
+        ],
+      },
+      {
+        id: 'deep-root-gnome',
+        name: { en: 'Deep-Root Gnome', it: 'Gnomo dalle Radici Profonde' },
+        description: {
+          en: 'Living far below the sunlit world, deep-root gnomes have grown attuned to the slow, patient rhythms of stone and root.',
+          it: 'Vivendo ben al di sotto del mondo baciato dal sole, gli gnomi dalle radici profonde si sono sintonizzati con i ritmi lenti e pazienti della pietra e delle radici.',
+        },
+        abilityBonuses: { wis: 1 },
+        source: 'original',
+        traits: [
+          { id: 'deep-root-gnome-nature', name: { en: 'Root Sense', it: 'Senso delle Radici' }, description: { en: 'You have proficiency in the Nature skill.', it: 'Sei competente nell’abilità Natura.' } },
+          { id: 'deep-root-gnome-poison-resistance', name: { en: 'Deep Blood', it: 'Sangue Profondo' }, description: { en: 'You have resistance to poison damage.', it: 'Hai resistenza al danno da veleno.' } },
+        ],
+      },
+      {
+        id: 'fairground-gnome',
+        name: { en: 'Fairground Gnome', it: 'Gnomo della Fiera Errante' },
+        description: {
+          en: 'Born into a life of traveling fairs and street performances, fairground gnomes know how to win over any crowd.',
+          it: 'Nati in una vita fatta di fiere itineranti e spettacoli di strada, gli gnomi della fiera errante sanno come conquistare qualsiasi pubblico.',
+        },
+        abilityBonuses: { cha: 1 },
+        source: 'original',
+        traits: [
+          { id: 'fairground-gnome-performance', name: { en: 'Crowd-Pleaser', it: 'Intrattenitore Nato' }, description: { en: 'You have proficiency in the Performance skill.', it: 'Sei competente nell’abilità Intrattenere.' } },
+          { id: 'fairground-gnome-persuasion', name: { en: 'Fast Talker', it: 'Parlantina Sciolta' }, description: { en: 'You have proficiency in the Persuasion skill.', it: 'Sei competente nell’abilità Persuasione.' } },
         ],
       },
     ],
@@ -194,6 +370,36 @@ export const RACES: Race[] = [
       { id: 'half-elf-fey-ancestry', name: { en: 'Fey Ancestry', it: 'Ascendenza Fatata' }, description: { en: "You have advantage on saving throws against being charmed, and magic can't put you to sleep.", it: 'Hai vantaggio ai tiri salvezza contro l’essere affascinato, e la magia non può metterti a dormire.' } },
       { id: 'half-elf-skill-versatility', name: { en: 'Skill Versatility', it: 'Versatilità nelle Abilità' }, description: { en: 'You gain proficiency in two skills of your choice.', it: 'Ottieni competenza in due abilità a tua scelta.' } },
     ],
+    subraces: [
+      {
+        id: 'wildborn-half-elf',
+        name: { en: 'Wildborn Half-Elf', it: 'Mezzelfo Selvatico' },
+        description: {
+          en: 'Raised at the edge of the wild rather than in elf or human halls, wildborn half-elves are as comfortable under open sky as any ranger.',
+          it: 'Cresciuti ai margini della natura selvaggia anziché nelle sale degli elfi o degli umani, i mezzelfi selvatici si trovano a proprio agio sotto il cielo aperto quanto qualsiasi ramingo.',
+        },
+        abilityBonuses: { wis: 1 },
+        source: 'original',
+        traits: [
+          { id: 'wildborn-half-elf-survival', name: { en: 'Wild Instinct', it: 'Istinto Selvatico' }, description: { en: 'You have proficiency in the Survival skill.', it: 'Sei competente nell’abilità Sopravvivenza.' } },
+          { id: 'wildborn-half-elf-quick', name: { en: 'Light Step', it: 'Passo Leggero' }, description: { en: 'Your walking speed increases by 5 feet.', it: 'La tua velocità sul terreno aumenta di 1,5 metri.' } },
+        ],
+      },
+      {
+        id: 'cityborn-half-elf',
+        name: { en: 'Cityborn Half-Elf', it: 'Mezzelfo di Città' },
+        description: {
+          en: 'Raised amid crowded markets and noble courts, cityborn half-elves learn early how to read a room and turn a phrase.',
+          it: 'Cresciuti tra mercati affollati e corti nobiliari, i mezzelfi di città imparano presto a leggere una stanza e a trovare le parole giuste.',
+        },
+        abilityBonuses: { int: 1 },
+        source: 'original',
+        traits: [
+          { id: 'cityborn-half-elf-silver-tongue', name: { en: 'Silver Tongue', it: 'Lingua d’Argento' }, description: { en: 'You have proficiency in the Persuasion skill.', it: 'Sei competente nell’abilità Persuasione.' } },
+          { id: 'cityborn-half-elf-extra-language', name: { en: 'Extra Language', it: 'Lingua Extra' }, description: { en: 'You can speak, read, and write one extra language of your choice.', it: 'Sai parlare, leggere e scrivere una lingua extra a tua scelta.' } },
+        ],
+      },
+    ],
   },
   {
     id: 'half-orc',
@@ -212,6 +418,36 @@ export const RACES: Race[] = [
       { id: 'half-orc-menacing', name: { en: 'Menacing', it: 'Minaccioso' }, description: { en: 'You gain proficiency in the Intimidation skill.', it: 'Ottieni competenza nell’abilità Intimidire.' } },
       { id: 'half-orc-relentless-endurance', name: { en: 'Relentless Endurance', it: 'Resistenza Instancabile' }, description: { en: 'When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. Usable once per long rest.', it: 'Quando vieni ridotto a 0 punti ferita ma non ucciso all’istante, puoi scendere a 1 punto ferita invece che a 0. Utilizzabile una volta per riposo lungo.' } },
       { id: 'half-orc-savage-attacks', name: { en: 'Savage Attacks', it: 'Attacchi Selvaggi' }, description: { en: 'When you score a critical hit with a melee weapon attack, you can roll one additional weapon damage die and add it to the extra damage of the critical hit.', it: 'Quando infliggi un colpo critico con un attacco in mischia, puoi tirare un dado da danno dell’arma aggiuntivo e aggiungerlo al danno extra del colpo critico.' } },
+    ],
+    subraces: [
+      {
+        id: 'frontier-half-orc',
+        name: { en: 'Frontier Half-Orc', it: 'Mezzorco di Frontiera' },
+        description: {
+          en: 'Living on the edge of untamed lands, frontier half-orcs have made peace with a harsh world that others fear to enter.',
+          it: 'Vivendo ai margini di terre incontaminate, i mezzorchi di frontiera hanno fatto pace con un mondo ostile che altri temono di attraversare.',
+        },
+        abilityBonuses: { wis: 1 },
+        source: 'original',
+        traits: [
+          { id: 'frontier-half-orc-survival', name: { en: 'Wilderness Instinct', it: 'Istinto Selvaggio' }, description: { en: 'You have proficiency in the Survival skill.', it: 'Sei competente nell’abilità Sopravvivenza.' } },
+          { id: 'frontier-half-orc-fearless', name: { en: 'Fearless Heart', it: 'Cuore Impavido' }, description: { en: 'You have advantage on saving throws against being frightened.', it: 'Hai vantaggio ai tiri salvezza contro la condizione spaventato.' } },
+        ],
+      },
+      {
+        id: 'warband-half-orc',
+        name: { en: 'Warband Half-Orc', it: 'Mezzorco della Banda Guerriera' },
+        description: {
+          en: 'Raised within a tight-knit warband, these half-orcs measure their worth in strength of arm and loyalty to their kin-in-arms.',
+          it: 'Cresciuti all’interno di una banda guerriera molto unita, questi mezzorchi misurano il proprio valore nella forza del braccio e nella lealtà verso i loro compagni d’armi.',
+        },
+        abilityBonuses: { str: 1 },
+        source: 'original',
+        traits: [
+          { id: 'warband-half-orc-athletics', name: { en: 'Battle-Hardened Frame', it: 'Corpo Temprato dalla Battaglia' }, description: { en: 'You have proficiency in the Athletics skill.', it: 'Sei competente nell’abilità Atletica.' } },
+          { id: 'warband-half-orc-grip', name: { en: 'Iron Grip', it: 'Presa di Ferro' }, description: { en: 'You have advantage on checks and saving throws made to escape a grapple or to avoid being knocked prone.', it: 'Hai vantaggio alle prove e ai tiri salvezza effettuati per liberarti da una presa o per evitare di cadere prono.' } },
+        ],
+      },
     ],
   },
   {
@@ -236,6 +472,36 @@ export const RACES: Race[] = [
           en: 'You know the thaumaturgy cantrip. At 3rd level you can cast hellish rebuke once per long rest as a 2nd-level spell, and at 5th level you can cast darkness once per long rest. Charisma is your spellcasting ability for these spells.',
           it: 'Conosci il trucchetto taumaturgia. Al 3° livello puoi lanciare rimprovero infernale una volta per riposo lungo come incantesimo di 2° livello, e al 5° livello puoi lanciare oscurità una volta per riposo lungo. Il Carisma è la tua caratteristica da incantatore per questi incantesimi.',
         },
+      },
+    ],
+    subraces: [
+      {
+        id: 'abyss-touched-tiefling',
+        name: { en: 'Abyss-Touched Tiefling', it: 'Tiefling Toccato dall’Abisso' },
+        description: {
+          en: 'Their bloodline runs closer to the chaos of the Abyss than the order of the Hells, and it shows in a wilder, fiercer temperament.',
+          it: 'La loro stirpe è più vicina al caos dell’Abisso che all’ordine degli Inferi, e questo si nota in un temperamento più selvaggio e feroce.',
+        },
+        abilityBonuses: { str: 1 },
+        source: 'original',
+        traits: [
+          { id: 'abyss-touched-tiefling-poison-resistance', name: { en: 'Abyssal Blood', it: 'Sangue Abissale' }, description: { en: 'You have resistance to poison damage.', it: 'Hai resistenza al danno da veleno.' } },
+          { id: 'abyss-touched-tiefling-intimidating', name: { en: 'Fearsome Presence', it: 'Presenza Spaventosa' }, description: { en: 'You have proficiency in the Intimidation skill.', it: 'Sei competente nell’abilità Intimidire.' } },
+        ],
+      },
+      {
+        id: 'old-blood-tiefling',
+        name: { en: 'Old-Blood Tiefling', it: 'Tiefling di Sangue Antico' },
+        description: {
+          en: 'Descended from a fiendish pact struck generations ago, old-blood tieflings carry faint, half-remembered echoes of eldritch knowledge.',
+          it: 'Discendenti di un patto infernale stretto generazioni fa, i tiefling di sangue antico portano echi flebili e a metà dimenticati di una conoscenza ultraterrena.',
+        },
+        abilityBonuses: { wis: 1 },
+        source: 'original',
+        traits: [
+          { id: 'old-blood-tiefling-arcana', name: { en: 'Inherited Lore', it: 'Sapienza Ereditata' }, description: { en: 'You have proficiency in the Arcana skill.', it: 'Sei competente nell’abilità Arcano.' } },
+          { id: 'old-blood-tiefling-guidance', name: { en: 'Whispered Guidance', it: 'Guida Sussurrata' }, description: { en: 'You know the Guidance cantrip. Charisma is your spellcasting ability for it.', it: 'Conosci il trucchetto Guida. Il Carisma è la tua caratteristica da incantatore per esso.' } },
+        ],
       },
     ],
   },

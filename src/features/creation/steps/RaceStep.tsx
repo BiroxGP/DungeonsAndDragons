@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { RACES } from '../../../data/races'
 import type { Character } from '../../../types/character'
 import { raceImage } from '../../../lib/images'
+import { SubraceIcon } from '../../../components/SubraceIcon'
 
 interface StepProps {
   draft: Character
@@ -58,13 +59,19 @@ export function RaceStep({ draft, patch }: StepProps) {
                     type="button"
                     onClick={() => patch({ subraceId: sr.id })}
                     className={
-                      'rounded-full px-3 py-1 text-sm border ' +
+                      'flex items-center gap-1.5 rounded-full pl-1 pr-3 py-1 text-sm border ' +
                       (draft.subraceId === sr.id
                         ? 'border-red-800 bg-red-800 text-white'
                         : 'border-stone-300 dark:border-stone-600')
                     }
                   >
+                    <SubraceIcon subraceId={sr.id} size={22} className="shrink-0" />
                     {localized(sr.name)}
+                    {sr.source === 'original' && (
+                      <span className={draft.subraceId === sr.id ? 'text-white/70 text-xs' : 'text-stone-400 text-xs'}>
+                        ({t('wizard.background.original')})
+                      </span>
+                    )}
                   </button>
                 ))}
               </div>

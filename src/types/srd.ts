@@ -27,6 +27,10 @@ export interface Subrace {
   description: LocalizedText
   abilityBonuses: Partial<Record<AbilityKey, number>>
   traits: Trait[]
+  /** 'SRD5.1' = transcribed from the official open document. 'original' =
+   * written for this project — SRD 5.1 only publishes one subrace per race
+   * (and none at all for Human, Dragonborn, Half-Elf, Half-Orc, Tiefling). */
+  source: 'SRD5.1' | 'original'
 }
 
 export type CasterProgression = 'none' | 'full' | 'half' | 'third' | 'pact'

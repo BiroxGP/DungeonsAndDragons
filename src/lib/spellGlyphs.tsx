@@ -2,10 +2,11 @@ import type { ReactNode } from 'react'
 
 /**
  * A small library of simple, reusable line-art glyphs (viewBox 0 0 24 24,
- * white strokes/fills) used to give every individual spell its own icon.
- * Hand-authored rather than AI-generated (there's no image-gen tool in this
- * session) — deliberately simple so ~60 shapes can cover 318 spells by
- * thematic fit, reused across many spells with a similar flavor.
+ * white strokes/fills). Hand-authored rather than AI-generated (there's no
+ * image-gen tool in this session) — deliberately simple so ~65 shapes can
+ * cover hundreds of spells and subraces by thematic fit, reused across many
+ * entries with a similar flavor. Originally built for SpellIcon, also reused
+ * by SubraceIcon.
  */
 export const SPELL_GLYPHS: Record<string, ReactNode> = {
   fire: <path d="M12 2C9 6 6 9.5 6 14a6 6 0 0 0 12 0c0-2-1-3.6-2-5 .2 1.3-.3 2.2-1 2.7C15.6 8 12 2 12 2Z" />,
@@ -354,6 +355,17 @@ export const SPELL_GLYPHS: Record<string, ReactNode> = {
   wallOfFire: (
     <g>
       <path d="M4 20c1-3 0-5-1-6 1 0 3 1 3 3 0-3 1-5-1-8 2 1 4 3 4 6 1-2 0-4-1-5 2 0 4 2 4 5 0-2 1-3 1-5 2 1 3 4 2 6 1-1 2-2 2-4 1 2 1 4 0 5-1 1-2 2-2 3z" />
+    </g>
+  ),
+  hearth: (
+    <g fill="none" stroke="white" strokeWidth="1.6" strokeLinejoin="round" strokeLinecap="round">
+      <path d="M4 12 12 5l8 7M6 11v8h12v-8" />
+      <path d="M12 19v-4c-1.5-1-1.5-2.5 0-4 1.5 1.5 1.5 3 0 4" />
+    </g>
+  ),
+  hammer: (
+    <g fill="none" stroke="white" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M14.5 6.5 18 3l3 3-3.5 3.5M14.5 6.5 4 17v3h3L17.5 9.5M14.5 6.5l3 3" />
     </g>
   ),
 }
