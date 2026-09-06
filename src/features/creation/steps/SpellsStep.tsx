@@ -1,13 +1,19 @@
 import { useTranslation } from 'react-i18next'
 import type { Character } from '../../../types/character'
+import type { Spell } from '../../../types/srd'
 import { getClass } from '../../../data/classes'
 import { spellsForClass } from '../../../data/spells'
 import { abilityModifier } from '../../../lib/rules'
 import { getLevel1SpellRule, requiredSpellCount } from '../../../lib/spellcasting'
+import { SchoolIcon } from '../../../components/SchoolIcon'
 
 interface StepProps {
   draft: Character
   patch: (patch: Partial<Character>) => void
+}
+
+function schoolKey(school: string): string {
+  return school.split(' ')[0].toLowerCase()
 }
 
 export function SpellsStep({ draft, patch }: StepProps) {
@@ -36,13 +42,50 @@ export function SpellsStep({ draft, patch }: StepProps) {
   const chosenCantrips = draft.knownSpellIds.filter((id) => cantripPool.some((c) => c.id === id))
   const chosenSpells = draft.knownSpellIds.filter((id) => spellPool.some((s) => s.id === id))
 
-  const toggle = (id: string, pool: typeof cantripPool, chosen: string[], max: number) => {
+  const toggle = (id: string, pool: Spell[], chosen: string[], max: number) => {
     const isChosen = chosen.includes(id)
     if (!isChosen && chosen.length >= max) return
     const otherIds = draft.knownSpellIds.filter((sid) => !pool.some((s) => s.id === sid))
     const newChosen = isChosen ? chosen.filter((sid) => sid !== id) : [...chosen, id]
     patch({ knownSpellIds: [...otherIds, ...newChosen] })
   }
+
+  const renderPool = (pool: Spell[], chosen: string[], max: number) => (
+    <div className="grid gap-2 sm:grid-cols-2 max-h-72 overflow-y-auto pr-1">
+      {pool.map((spell) => {
+        const checked = chosen.includes(spell.id)
+        const atCap = !checked && chosen.length >= max
+        return (
+          <label
+            key={spell.id}
+            className={
+              'flex items-center gap-3 rounded-lg border p-2 transition-colors ' +
+              (checked
+                ? 'border-red-800 bg-red-50 dark:bg-red-950 cursor-pointer'
+                : atCap
+                  ? 'border-stone-200 dark:border-stone-700 opacity-50 cursor-not-allowed'
+                  : 'border-stone-200 dark:border-stone-700 cursor-pointer hover:border-stone-400')
+            }
+          >
+            <input
+              type="checkbox"
+              className="sr-only"
+              checked={checked}
+              disabled={atCap}
+              onChange={() => toggle(spell.id, pool, chosen, max)}
+            />
+            <SchoolIcon school={spell.school} className="shrink-0" />
+            <div className="min-w-0">
+              <div className="font-semibold text-sm truncate">{localized(spell.name)}</div>
+              <div className="text-xs text-stone-500 dark:text-stone-400">
+                {t(`schools.${schoolKey(spell.school)}`)} · {spell.castingTime}
+              </div>
+            </div>
+          </label>
+        )
+      })}
+    </div>
+  )
 
   return (
     <div>
@@ -53,50 +96,14 @@ export function SpellsStep({ draft, patch }: StepProps) {
         <div className="font-medium mb-2">
           {t('wizard.spells.cantrips')} ({chosenCantrips.length}/{rule.cantrips})
         </div>
-        <div className="grid gap-2 sm:grid-cols-2 max-h-64 overflow-y-auto pr-1">
-          {cantripPool.map((spell) => {
-            const checked = chosenCantrips.includes(spell.id)
-            return (
-              <label
-                key={spell.id}
-                className="flex items-start gap-2 rounded-lg border border-stone-200 dark:border-stone-700 p-2 text-sm cursor-pointer hover:border-stone-400"
-              >
-                <input
-                  type="checkbox"
-                  className="mt-1"
-                  checked={checked}
-                  onChange={() => toggle(spell.id, cantripPool, chosenCantrips, rule.cantrips)}
-                />
-                <span className="font-semibold">{localized(spell.name)}</span>
-              </label>
-            )
-          })}
-        </div>
+        {renderPool(cantripPool, chosenCantrips, rule.cantrips)}
       </div>
 
       <div>
         <div className="font-medium mb-2">
           {t('wizard.spells.level1')} ({chosenSpells.length}/{requiredSpells})
         </div>
-        <div className="grid gap-2 sm:grid-cols-2 max-h-64 overflow-y-auto pr-1">
-          {spellPool.map((spell) => {
-            const checked = chosenSpells.includes(spell.id)
-            return (
-              <label
-                key={spell.id}
-                className="flex items-start gap-2 rounded-lg border border-stone-200 dark:border-stone-700 p-2 text-sm cursor-pointer hover:border-stone-400"
-              >
-                <input
-                  type="checkbox"
-                  className="mt-1"
-                  checked={checked}
-                  onChange={() => toggle(spell.id, spellPool, chosenSpells, requiredSpells)}
-                />
-                <span className="font-semibold">{localized(spell.name)}</span>
-              </label>
-            )
-          })}
-        </div>
+        {renderPool(spellPool, chosenSpells, requiredSpells)}
       </div>
     </div>
   )

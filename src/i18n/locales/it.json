@@ -143,5 +143,15 @@
     "int": "Intelligenza",
     "wis": "Saggezza",
     "cha": "Carisma"
+  },
+  "schools": {
+    "abjuration": "Abiurazione",
+    "conjuration": "Evocazione",
+    "divination": "Divinazione",
+    "enchantment": "Ammaliamento",
+    "evocation": "Invocazione",
+    "illusion": "Illusione",
+    "necromancy": "Necromanzia",
+    "transmutation": "Trasmutazione"
   }
 }
